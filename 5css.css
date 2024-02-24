@@ -1,0 +1,929 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project: 	Bu index DedSec Tarafından hazırlanmıştır.
+Version:	1
+Finished Date:  05.06.2016
+Assigned to:	İzinsiz kullanımı yasaktır...
+
+-------------------------------------------------------------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:700,500,300,100,400,400italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100);
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+    1. Body
+        1.1. Font Settings
+        1.2. Headlines with lines
+	2. Homepage
+		2.1. Logo
+        2.2. xloading text
+        2.3. Countdown
+        2.4. Subscribe Form
+        2.5. Social Buttons
+        2.6. Scroll Button
+    3. Features
+    4. Contact
+        4.1. Google Map
+        4.2. Contact Form
+            4.2.2. Contact Form Validation
+        4.3. Contact Social Buttons
+        4.4. Scroll to top
+    5. Loading
+    6. Responsive
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. BODY]
+*/
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	background-image: url() no-repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Dotted overlay background & color */
+#body-bg {
+    background: rgb(10, 32, 31) url() no-repeat;
+    opacity: 0.8;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -99;
+}
+
+/* Canvas Animation */
+#canvas {
+    position: fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right: 0;
+	color: #ff0000
+}
+
+#page {
+    position: relative;
+    min-height: 100%;
+    z-index: 99;
+	color: #ff0000
+}
+
+.container {
+    text-align: left;
+}
+
+/* --------------------------------
+    1.1.Font Settings
+-------------------------------- */
+
+h1  {
+    font-family: 'Roboto Slab', serif;
+    font-size : 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2e2e2e;
+    text-transform: uppercase;
+}
+
+h3  {
+    font-size: 25px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #2e2e2e;
+    line-height: 23px;
+}
+
+.desc {
+    margin-top: 40px;
+}
+
+/* --------------------------------
+    1.2. Headlines with lines
+-------------------------------- */
+
+.heading{
+    overflow: hidden;
+    text-align: center;
+}
+
+.heading > span{
+    position: relative;
+    display: inline-block;
+}
+
+.heading > span:before, .heading > span:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 1px solid #2e2e2e;
+    width: 200px; /* half of limiter*/
+    margin: 0 20px;
+}
+
+.heading > span:before{
+    right: 100%;
+}
+
+.heading > span:after{
+    left: 100%;
+}
+
+/*------------------------------------------------------------------
+[2. HOMEPAGE]
+*/
+
+.home{
+    display: table;
+    height:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.home h1 {
+    margin-top: 40px;
+}
+
+/* --------------------------------
+    2.1. Logo
+-------------------------------- */
+
+.logo {
+    width: 40%;
+    height: 40%;
+}
+
+/* --------------------------------
+    2.2. xloading text
+-------------------------------- */
+.cd-headline {
+    margin-top: 10px;
+}
+.cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.cd-words-wrapper b {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+}
+
+.cd-words-wrapper b.is-visible {
+    position: relative;
+}
+
+.no-js .cd-words-wrapper b {
+    opacity: 0;
+}
+
+.no-js .cd-words-wrapper b.is-visible {
+    opacity: 1;
+}
+
+.cd-headline.loading-bar span {
+    display: inline-block;
+    padding: .2em 0;
+}
+
+.cd-headline.loading-bar .cd-words-wrapper {
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.cd-headline.loading-bar .cd-words-wrapper::after {
+    /* loading bar */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #ffffff; /* Loading Bar Color */
+    z-index: 2;
+    -webkit-transition: width 0.3s -0.1s;
+    -moz-transition: width 0.3s -0.1s;
+    transition: width 0.3s -0.1s;
+}
+
+.cd-headline.loading-bar .cd-words-wrapper.is-loading::after {
+    width: 100%;
+    -webkit-transition: width 3s;
+    -moz-transition: width 3s;
+    transition: width 3s;
+}
+
+.cd-headline.loading-bar b {
+    top: .2em;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.cd-headline.loading-bar b.is-visible {
+    opacity: 1;
+    top: 0;
+}
+
+/* --------------------------------
+    2.3. Countdown
+-------------------------------- */
+
+ul.countdown {
+    list-style: none;
+    padding: 0;
+    display: block;
+    text-align: left;
+    margin-top: 30px;
+}
+ul.countdown li {
+    display: inline-block;
+    padding: 24px;
+}
+
+ul.countdown li span {
+    font-family: 'Roboto Slab', serif;
+    font-size: 60px;
+    font-weight: 200;
+    line-height: 80px;
+    color: #f20c0c;
+}
+
+ul.countdown p {
+    font-size: 18px;
+    float: right;
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* --------------------------------
+    2.4. Subscribe Form
+-------------------------------- */
+#mc-form {
+    margin-top: 25px;
+}
+#mc-form .form-group {
+    width: 98%;
+    max-width: 400px;
+}
+
+#mailInput {
+    margin: 0 auto;
+}
+
+#mc-subscribe {
+    width: 140px;
+}
+
+#mc-form .form-control {
+    height: 46px;
+    width: 100%;
+    margin-top: 0;
+    background-color: rgba(0,0,0,0.5);
+    color: #FFF;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #FFF;
+    font-weight: 300;
+}
+
+.form-control:-moz-placeholder {
+    color: #FFF;
+    font-weight: 300;
+}
+
+.form-control::-moz-placeholder {
+    color: #FFF;
+    font-weight: 300;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #FFF;
+    font-weight: 300;
+}
+
+.form-control:focus {
+    border-color:#ff0000;
+    outline:0;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,208,67,.6);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255,208,67,.6)
+}
+
+/* Button Settings */
+
+#mc-form .input-group-btn>.btn:hover,
+#mc-form .input-group-btn>.btn:focus,
+#mc-form .input-group-btn>.btn:active { z-index: 1; }
+
+#mc-form .btn-default {
+    background-color: rgba(255,255,255,0.5);
+    border-color: #fff;
+    border-radius: 0;
+    -webkit-transition: all .5s ease-out;
+    padding: 5px 0.3em;
+    height: 46px;
+    font-weight: 700;
+    font-size: 19px;
+    color: #000;
+}
+
+#mc-form .btn-default:hover,
+#mc-form .btn-default:focus,
+#mc-form .btn-default:active {
+    color: #ff0000;
+    background-color: #000;
+    border-color: #ff0000;
+}
+
+.btn:active:focus,
+.btn-default:focus,
+.btn:focus,
+.btn-default:active { outline: none; }
+
+/* Form Notifications */
+
+#mc-notification {
+    margin: .75em 0 0;
+    color: #FFF;
+}
+
+.alert,
+.success {
+    padding: .5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.alert { background-color: rgb(255,0,0); }
+
+.success { background-color: rgb(255,0,0); }
+
+.alert i,
+.success i { padding-right: .5em; }
+
+/* --------------------------------
+    2.5. Social Buttons
+-------------------------------- */
+
+.social{
+    display: table;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.social ul {
+    width: 100%;
+    list-style: none;
+    padding-top: 20px;
+}
+
+.socialButtonng {
+    height: 30px;
+    width: 274px;
+    border: 2px solid rgba(215,215,215,0.5);
+    border-radius: 2px;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+/* Facebook Hover Color*/
+.socialButtonng:nth-child(1):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+/* Icons */
+.socialButtonng i {
+    color: rgba(215,215,215,0.5);
+    margin-top: 9px;
+    font-size: 33px;
+}
+.socialButtonngs {
+    height: 24px;
+    width: 454px;
+    border: 2px solid rgba(215,215,215,0.5);
+    border-radius: 2px;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+/* Facebook Hover Color*/
+.socialButtonngs:nth-child(1):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+/* Icons */
+.socialButtonngs i {
+    color: rgba(215,215,215,0.5);
+    margin-top: 9px;
+    font-size: 33px;
+}
+
+.socialButtonngk {
+    height: 90px;
+    width: 90px;
+    border: 2px solid rgba(215,215,215,0.5);
+    border-radius: 2px;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+/* Facebook Hover Color*/
+.socialButtonngk:nth-child(1):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+/* Twitter Hover Color */
+.socialButtonngk:nth-child(2):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+
+/* Google+ Color */
+.socialButtonngk:nth-child(3):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+/* Twitter Hover Color */
+.socialButtonngk:nth-child(4):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+
+/* Google+ Color */
+.socialButtonngk:nth-child(5):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+/* Icons */
+.socialButtonngk i {
+    color: rgba(215,215,215,0.5);
+    margin-top: 9px;
+    font-size: 33px;
+}
+
+	
+.socialButton {
+    height: 34px;
+    width: 34px;
+    border: 2px solid rgba(215,215,215,0.5);
+    border-radius: 2px;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+
+/* Facebook Hover Color*/
+.socialButton:nth-child(1):hover {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+
+/* Twitter Hover Color */
+.socialButton:nth-child(2):hover {
+    background: #4099FF;
+    border: 2px solid #4099FF;
+}
+
+/* Google+ Color */
+.socialButton:nth-child(3):hover {
+    background: #D34836;
+    border: 2px solid #D34836;
+}
+
+/* Icons */
+.socialButton i {
+    color: rgba(215,215,215,0.5);
+    margin-top: 9px;
+    font-size: 13px;
+}
+
+.socialButton:hover i{
+    color: rgba(255,2255,255,1);
+}
+
+.socialLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.yllw + .tooltip > .tooltip-inner {
+    background-color: #f40909;
+    color: #000000;
+}
+
+.yllw + .tooltip > .tooltip-arrow {
+    border-bottom-color: #f40909;
+    color: #000000;
+}
+
+/* --------------------------------
+    2.6. Scroll Button
+-------------------------------- */
+
+.scrollButton {
+    height: 50px;
+    width: 50px;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid #fff;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.scrollButton i {
+    margin-top: 7px;
+    color: #fff;
+    font-size: 33px;
+}
+
+.scrollButton:hover {
+    background: rgba(0,0,0,1);
+    border: 2px solid #ffd043;
+    transition: all 0.5s ease;
+}
+
+.scrollButton:hover i {
+    color: #ffd043;
+}
+
+.scrollButtonLink {
+    display: block;
+}
+
+/*------------------------------------------------------------------
+[3. FEATURES]
+*/
+
+.features {
+    background: rgba(255,255,255,1);
+    color: #000;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.features .row {
+    margin-top: 75px;
+}
+
+.features h4 {
+    margin-top: 24px;
+    margin-bottom: 25px;
+}
+
+
+/*------------------------------------------------------------------
+[4. CONTACT]
+*/
+
+.contact {
+    background: rgba(255,208,67,1);
+    color: #2e2e2e;
+    padding-top: 70px;
+    padding-bottom: 90px;
+    border-bottom: 10px solid #2e2e2e;
+}
+
+.contact .row {
+    margin-top: 50px;
+}
+span .shadow,
+span h5{
+    text-shadow: rgb(229, 187, 60) 1px 1px,
+    rgb(234, 191, 61) 2px 2px,
+    rgb(239, 195, 63) 3px 3px,
+    rgb(244, 199, 64) 4px 4px,
+    rgb(249, 203, 65) 5px 5px,
+    rgb(255, 208, 67) 6px 6px;
+    background-color: rgb(255, 208, 67);
+    height: 100%;
+    width: 100%;
+}
+span .shadow {
+    color: #2e2e2e;
+    font-size: 35px;
+    text-align: center;
+}
+
+.contact h5 {
+    padding-top: 2px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+span a {
+    padding-top: 20px;
+    color: #2e2e2e;
+}
+
+/* --------------------------------
+    4.1. Google Map
+-------------------------------- */
+
+#map {
+    height: 410px;
+}
+
+/* --------------------------------
+    4.2. Contact Form
+-------------------------------- */
+
+.contact-form .form-control {
+    border: 1px solid #2e2e2e;
+    margin-bottom: .75em;
+    padding: .75em 12px;
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+    height: 50px;
+    font-weight: 300;
+    border-radius: 0;
+    font-size: 15px;
+    color: #2e2e2e;
+}
+
+.contact-form .form-control::-webkit-input-placeholder {
+    color: #2e2e2e;
+}
+.contact-form .form-control:-moz-placeholder {
+    color: #2e2e2e;
+}
+.contact-form .form-control::-moz-placeholder {
+    color: #2e2e2e;
+}
+.contact-form .form-control:-ms-input-placeholder {
+    color: #2e2e2e;
+}
+
+.contact-form label.error {
+    margin-bottom: 12px;
+    font-weight: 300;
+    color: #ea5050;
+}
+
+.contact-form .btn-default {
+    width: 100%;
+    background-color: #2e2e2e;
+    border:1px solid #2e2e2e;
+    border-radius: 0;
+    -webkit-transition: all .5s ease-out;
+    padding: 5px 0.3em;
+    height: 46px;
+    font-weight: 500;
+    font-size: 19px;
+    color: #fafafa;
+}
+
+.contact-form .control-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+textarea{
+    height:230px;
+    min-height:230px;
+}
+
+/* --------------------------------
+    4.2.2. Contact Form Validation
+-------------------------------- */
+
+.contact-form label.error i { padding-right: 8px; }
+
+.successForm,
+.errorForm { display: none; }
+
+.successForm p { background: rgba(39, 174, 96, 0.7); }
+
+.errorForm p { background: rgba(231, 76, 60, 0.7); }
+
+.contact-form { position: relative; text-align: left;}
+
+.contact-form .successForm p,
+.contact-form .errorForm p {
+    position: absolute;
+    display: block;
+    top: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+    color: #fff;
+    border-radius: 2px;
+    padding: .75em;
+}
+
+/* --------------------------------
+    4.3. Contact Social Buttons
+-------------------------------- */
+
+#contact .socialButton {
+    border: 2px solid #2e2e2e;
+    border-radius: 2px;
+    display: inline-block;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+}
+
+#contact .socialButton:hover i {
+    color: #ffffff;
+}
+
+#contact .socialButton i {
+    color: #2e2e2e;
+    margin-top: 9px;
+    font-size: 13px;
+}
+
+.blck + .tooltip > .tooltip-inner {
+    background-color: #000000;
+    color: #ffd043;
+}
+
+.blck + .tooltip > .tooltip-arrow {
+    border-bottom-color: #000000;
+    color: #ffd043;
+}
+
+/* --------------------------------
+    4.4. Scroll to top
+-------------------------------- */
+
+#contact .scrollButton {
+    height: 30px;
+    background: #2e2e2e;
+    position: absolute;
+    border: 0;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+}
+
+#contact .scrollButton i {
+    margin-top: 3px;
+}
+
+/*------------------------------------------------------------------
+[5. LOADING ]
+*/
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffd043;
+    z-index: 9999;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #2e2e2e;
+    margin: 100px auto;
+    -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+    animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    } 50% {
+          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+      } 100% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        }
+}
+
+/*------------------------------------------------------------------
+[6. RESPONSIVE ]
+*/
+
+/* Smaller Resolution Desktops and Laptops */
+@media (max-width: 800px) {
+
+    ul.countdown li {
+        padding: 15px;
+    }
+    ul.countdown li span {
+        font-size: 33px;
+        line-height: 0;
+        font-weight: 300;
+    }
+    ul.countdown p {
+        font-size: 24px;
+        float: none;
+        font-weight: 200;
+        padding-top: 7px;
+    }
+
+    .features .row {
+        margin-top: 15px;
+    }
+    #features .row [class*="col-"] {
+        margin-top: 50px;
+    }
+
+    #contact .row [class*="col-"]{
+        margin-top: 50px;
+    }
+
+}
+
+/* Smaller devices */
+@media (max-width: 650px) {
+
+    h1 { font-size: 40px; }
+
+    ul.countdown li {
+        padding: 10px;
+    }
+    ul.countdown li span {
+        font-size: 30px;
+        line-height: 0;
+        font-weight: 500;
+    }
+    ul.countdown p {
+        font-size: 20px;
+        font-weight: 300;
+        padding-top: 5px;
+    }
+
+
+}
+
+/* Even Smaller devices */
+@media (max-width: 450px) {
+
+    h1 { font-size: 35px; }
+    h3 { font-size: 20px; }
+
+    ul.countdown li {
+        padding: 7px;
+    }
+    ul.countdown li span {
+        font-size: 25px;
+    }
+    ul.countdown p {
+        font-size: 15px;
+    }
+
+}
