@@ -1,176 +1,144 @@
-﻿<!DOCTYPE html>
-<html class="">
-<meta charset="ISO-8859-1">
-<!-- Deep Cheats Tarafından düzenlenmiştir. -->
-<!-- www.deepcheats.com.tr / #By Tanımsız Roocer -->
-<link rel="icon" type="image/gif" href="https://deepcheats.com.tr/">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Cheats</title>
-	<link rel="shortcut icon" href="logo.png">
-	<meta name="robots" content="index, follow">
-	<meta name="author" content="Deep Cheats">
-	<meta name="description" content="Deep Cheats">
-	<meta name="keywords" content="Deep Cheats">
-	<link rel="shortcut icon" href="#">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+    <link rel="shortcut icon" href="logo.png">
     <link rel="stylesheet" href="1css.css">
-    <link rel="stylesheet" href="2css.css">  <!-- Bootstrap -->
-    <link rel="stylesheet" href="3css.css">      <!-- Reset -->
-    <link rel="stylesheet" href="4css.css">    <!-- Wow Animations -->
-    <link rel="stylesheet" href="5css.css">      <!-- Deep Cheats style -->
-	<link rel="canonical" href="index-2.html">	
-	<link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="2css.css"> <!-- Bootstrap -->
+    <link rel="stylesheet" href="3css.css"> <!-- Reset -->
+    <link rel="stylesheet" href="4css.css"> <!-- Wow Animations -->
+    <link rel="stylesheet" href="5css.css"> <!-- Deep Cheats style -->
     <style>
-        body{background: url(bg.jpg) center center no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-		.sosyalgenel { float:left; font-size:22px; }
-        .facebook { padding:10px; font-weight:600; background:#3B5998; color:#fff; float:left; margin:5px; border-radius: 3px;}
-        .tanitim { padding:10px; font-weight:600; background:#FDA321; color:#fff; float:left; margin:5px; border-radius: 3px;}
-        .uyari { padding:10px; font-weight:600; background:red; color:#fff; z-index:9999; float:left; margin:5px; border-radius: 3px;}
-        .yesil{ padding:10px; font-weight:600; background:#1fdd16; color:#fff; z-index:9999; float:left; margin:5px; border-radius: 3px; }
-        .forum{ padding:10px; font-weight:600; background:#d94839; color:#fff; z-index:9999; float:left; margin:5px; border-radius: 3px; }
-        .onlinesayisi {font-size:24px; color:#ccc; text-align:center; margin-top:3px; }
-		.sistem{ padding:10px; font-weight:600; background:#2f778b; color:#fff; z-index:9999; float:left; margin:5px; border-radius: 3px; }
-		
-       footer {
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body {
+            background: url(bg2.jpg) center center no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            position: relative;
+        }
+        #canvas {
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .container {
+            position: relative;
+        }
+        .footer-content {
             color: #fff;
-            padding: 1px 0;
+            padding: 1px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
             text-align: center;
-        }
-
-        .footer-content {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            justify-content: center;
+            align-items: center; /* Yatay ve dikey hizalama */
+			z-index: 3;
         }
-
         .footer-section {
-            text-align: center;
-            margin: 0;
+            margin: 0 10px; /* Linkler arası boşluk */
+            flex: 1; /* Her bir linkin eşit genişliği */
+            text-align: center; /* Link içeriğini ortala */
         }
-
-        .footer-section img {
+        .footer-content img {
             max-width: 100px;
             height: auto;
             border-radius: 8px;
             margin: 1px;
         }
-
-        .footer-section a {
+        .footer-content a {
             color: #fff;
             text-decoration: none;
             display: block;
             margin-top: 10px;
             transition: font-size 0.3s ease;
         }
-
-        .footer-section a:hover {
+        .footer-content a:hover {
             font-size: 1.1em;
         }
+		.footer-content a img {
+			display: inline-block;
+		}
     </style>
 </head>
 <body>
 
-
 <canvas id="canvas"></canvas>
 
 <div class="container">
-<div class="col-md-12">
-<div id="page">
-
- 
-    <section id="home" class="home">
-        <div class="table-cell">
-		
-			<div class="container" style="width:100%">
-            
-               <center>
-
-                
-               
-                <h1 class="wow fadeInUp" data-wow-duration="7s">DeepCheats.<span style="color:#FF0000">Com.Tr!</span></h1>
-                
-                <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="7s">
-                    <span class="cd-words-wrapper">
-                        <b class="is-visible">  <span style="color:#FF0000"></span></b>
-                    </span>
-                </h3>
-                 <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="7s" style="margin:20px 0 40px 0">
-                    <span class="cd-words-wrapper">
-                      <b class="is-visible"> <span style="color:#FF0000">Hoş Geldiniz</span></b>
-                        
-                    </span>
-
-                </h3><a href="https://deepcheats.com.tr/form/" target_blank><h1 class="wow fadeInUp" data-wow-duration="7s">Satın <span style="color:#FF0000">Al!... </a> </span></h1>
-				
-                <div class="sosyalgenel" data-wow-duration="7s" style="clear:both">
-                    				
+    <div class="col-md-12">
+        <div id="page">
+            <section id="home" class="home">
+                <div class="table-cell">
+                    <div class="container" style="width:100%">
+                        <center>
+                            <h1 class="wow fadeInUp" data-wow-duration="7s">DeepCheats.<span style="color:#FF0000">Com.Tr!</span></h1>
+                            <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="7s">
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">  <span style="color:#FF0000"></span></b>
+                                </span>
+                            </h3>
+                            <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="7s" style="margin:20px 0 40px 0">
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible"> <span style="color:#FF0000">Hoş Geldiniz</span></b>
+                                </span>
+                            </h3>
+                            <a href="https://deepcheats.com.tr/form/" target="_blank"><h1 class="wow fadeInUp" data-wow-duration="7s">Satın <span style="color:#FF0000">Al!... </a> </span></h1>
+                            <div class="sosyalgenel" data-wow-duration="7s" style="clear:both">
+                            </div>
+                        </center>
+                    </div>
                 </div>
-                  
-             
-         </div>
+            </section>
         </div>
-		
-    </section>
-
-
-   
-</div>
+    </div>
 </div>
 
-<body 
-oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
-</body>
-
-<body onkeydown="return false">
-
-</div>
-
-<div id="body-bg"></div>
-
-<script src="js1.js"></script>
-
-<script src="js2.js"></script>
-<script src="js3.js"></script> <!-- Google Map Settings -->
-<script src="js4.js"></script> <!-- Slide Background -->
-<script src="js5.js"></script> <!-- Countdown Script -->
-<script src="js6.js"></script> <!-- Jquery Form Script -->
-<script src="js7.js"></script> <!-- Form Validation -->
-<script src="js8.js"></script>
-<script src="js9.js"></script> <!-- Canvas Background -->
-<script src="js10.js"></script> <!-- Text Loading -->
-<script src="js11.js"></script> <!-- Wow Animations -->
-<script src="js12.js"></script> <!-- Custom JS Settings -->
-
-<script>
-    wow = new WOW(
-            {
-                boxClass:     'wow',      // default
-                animateClass: 'animated', // default
-                offset:       0,          // default
-                mobile:       true,       // default
-                live:         true        // default
-            }
-    );
-
-    wow.init();
-</script>
-<footer>
-    <div class="footer-content">
-         <div class="footer-section">
-                <a href="https://cheatglobal.com/"><img src="cg.png" alt="cg"></a>
-            </div>
-            <div class="footer-section">
-                <a href="https://deepcheats.com.tr/"><img src="logo.png" alt="mh"></a>
-            </div>
-            <div class="footer-section">
-                <a href="https://www.elitepvpers.com/"><img src="epvp.png" alt="epvp"></a>
-            </div>
+<footer class="footer-content">
+    <div class="footer-section">
+        <a href="https://cheatglobal.com/" target="_blank"><img src="cg.png" alt="cg"></a>
+    </div>
+    <div class="footer-section">
+        <a href="https://memoryhackers.org/" target="_blank"><img src="mh.png" alt="mh"></a>
+    </div>
+    <div class="footer-section">
+        <a href="https://www.elitepvpers.com/" target="_blank"><img src="epvp.png" alt="epvp"></a>
     </div>
 </footer>
+
+<!-- JavaScript dosyaları -->
+<script src="js1.js"></script>
+<script src="js2.js"></script>
+<script src="js3.js"></script>
+<script src="js4.js"></script>
+<script src="js5.js"></script>
+<script src="js6.js"></script>
+<script src="js7.js"></script>
+<script src="js8.js"></script>
+<script src="js9.js"></script>
+<script src="js10.js"></script>
+<script src="js11.js"></script>
+<script src="js12.js"></script>
+<script>
+    wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
 </body>
 </html>
