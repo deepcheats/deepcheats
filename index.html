@@ -18,7 +18,7 @@
             overflow: hidden;
         }
         body {
-            background: url(bg2.jpg) center center no-repeat;
+            background: url(bg3.jpg) center center no-repeat;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -70,6 +70,18 @@
 		.footer-content a img {
 			display: inline-block;
 		}
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff; /* Mavi düğme rengi */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3; /* Hover rengi */
+        }
     </style>
 </head>
 <body>
@@ -77,24 +89,21 @@
 <canvas id="canvas"></canvas>
 
 <div class="container">
-    <div class="col-md-12">
         <div id="page">
             <section id="home" class="home">
                 <div class="table-cell">
                     <div class="container" style="width:100%">
                         <center>
-                            <h1 class="wow fadeInUp" data-wow-duration="7s">DeepCheats.<span style="color:#FF0000">Com.Tr!</span></h1>
-                            <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="7s">
-                                <span class="cd-words-wrapper">
-                                    <b class="is-visible">  <span style="color:#FF0000"></span></b>
-                                </span>
-                            </h3>
-                            <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="7s" style="margin:20px 0 40px 0">
+						<img class="cd-headline loading-bar wow fadeInUp" data-wow-duration="3s" width="200" src="logo.png">
+
+                            <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="3s" style="margin:20px 0 40px 0">
                                 <span class="cd-words-wrapper">
                                     <b class="is-visible"> <span style="color:#FF0000">Hoş Geldiniz</span></b>
                                 </span>
                             </h3>
-                            <a href="https://deepcheats.com.tr/form/" target="_blank"><h1 class="wow fadeInUp" data-wow-duration="7s">Satın <span style="color:#FF0000">Al!... </a> </span></h1>
+                        <h3 class="cd-headline loading-bar wow fadeInUp" data-wow-duration="3s">
+                             <button onclick="location.href='https://deepcheats.com.tr/';">Discord Sunucumuza Katıl</button>
+                            </h3>
                             <div class="sosyalgenel" data-wow-duration="7s" style="clear:both">
                             </div>
                         </center>
@@ -102,18 +111,18 @@
                 </div>
             </section>
         </div>
-    </div>
 </div>
+
 
 <footer class="footer-content">
     <div class="footer-section">
-        <a href="https://cheatglobal.com/" target="_blank"><img src="cg.png" alt="cg"></a>
+        <a class="cd-headline loading-bar wow fadeInUp" data-wow-duration="3s" href="https://cheatglobal.com/" target="_blank"><img src="cg.png" alt="cg"></a>
+    </div>
+    <div  class="footer-section">
+        <a class="cd-headline loading-bar wow fadeInUp" data-wow-duration="3s" href="https://deepcheats.com.tr/" target="_blank"></a>
     </div>
     <div class="footer-section">
-        <a href="https://memoryhackers.org/" target="_blank"><img src="mh.png" alt="mh"></a>
-    </div>
-    <div class="footer-section">
-        <a href="https://www.elitepvpers.com/" target="_blank"><img src="epvp.png" alt="epvp"></a>
+        <a class="cd-headline loading-bar wow fadeInUp" data-wow-duration="3s" href="https://www.elitepvpers.com/" target="_blank"><img src="epvp.png" alt="epvp"></a>
     </div>
 </footer>
 
@@ -141,3 +150,5 @@
 </script>
 </body>
 </html>
+
+
