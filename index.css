@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;1,600&display=swap');
+/* ---- reset ---- */
+*{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+}
+canvas {
+    display: block;
+} /* ---- particles.js container ---- */
+#particles-js {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #3522c9;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;    
+}
+
+.header h1{
+    font-size: 40px;
+}
+
+.header h2{
+    font-weight: 200;
+}
+
+.header .buttons{
+    margin-top: 20px;
+}
+.header .buttons a{
+    color: rgb(41, 41, 41);
+    text-decoration: none;
+    margin-left: 5px;
+    background: white;
+    padding: 2px 5px;
+    border-radius: 15px;
+    transition: 300ms;
+}
+
+
+.header .buttons a:hover{
+    background: gray;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main{
+    margin-top: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.main h1{
+    text-align: center;
+    color: rgb(41, 41, 41);
+}
+
+.main .info{
+    text-align: center;
+    margin: 0;
+    display: inline-flex;
+    flex-basis: calc(100% / 3);
+    flex-shrink: 0;
+    flex-wrap:wrap;
+    min-width: 0;
+    vertical-align: text-top;
+    flex-direction: column;
+    margin-top: 40px;
+
+
+}
+
+.main .info h1{
+    font-size: 25px;
+}
+
+.main .info ul li{
+    margin: 5px auto;
+    list-style: disc;
+    color: rgb(41, 41, 41);
+    width: max-content;
+    font-size: 15px;
+
+}
+
+.main .info .pricesOuter{
+    margin: 10px auto;
+    flex-grow: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+}
+
+.main .info .prices{
+    margin: 0;
+    background: rgb(41, 41, 41);
+    color: white;
+
+    padding: 15px 25px;
+    border-radius: 15px;
+    
+    width: max-content;
+    height: max-content;
+    
+}
+
+.main .info .prices .purchase{
+    
+    background: #3c2ac4;
+    padding: 5px 15px;
+    margin: -15px -25px;
+    display: block;
+    border-radius: 0 0 15px 15px;
+    text-decoration: none;
+    transition: 300ms;
+
+    
+
+}
+
+.main .info .prices .purchase:hover{
+    background: #2a17c0;
+    border-radius: 15px;
+}
+
+.other h1{
+    color:rgb(41, 41, 41);
+    text-align: center;
+}
+
+.main .info p{
+    color:rgb(41, 41, 41);
+    text-align: center;
+}
+
+.main .info .pricesOuter .prices p{
+    color: white;
+}
+
+.footer{
+    background:rgb(41, 41, 41);
+    font-weight: normal;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.collectionHeader h1{
+    text-align: center;
+    color:rgb(41, 41, 41);
+    margin-top: 20px;
+    text-decoration: underline;
+    font-size: 40px;
+
+}
+
+.main .info.half{
+    flex-basis: 50%;
+}
+
+@media screen and (max-width: 1200px){
+    .header h1{
+        font-size: 30px;
+    }
+    
+    .header h2{
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+
+    .header .buttons{
+        flex-direction: column;
+        display: flex;
+    }
+
+    .header .buttons a{
+        margin-top: 5px;
+        padding: 5px 10px;
+    }
+    .main .info{
+        flex-basis: 100%;
+    }
+
+    .footer p{
+        font-size: 13px;
+    }
+
+    .main .info ul li{
+        font-size: 13px;
+    }
+
+    .main{
+        width: 90%;
+    }
+}
+#enter{
+    background: rgba(41, 41, 41, 0.95);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#enter .enterButton{
+    background: #1b0e80;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 6px 30px;
+    border-radius: 15px;
+}
+
+#enter p{
+    font-size: 12px;
+}
+
+#enter .declineButton{
+    background: #920101;
+    margin-top: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 4px 20px;
+    border-radius: 15px;
+}
