@@ -16,7 +16,6 @@ function enterSite(){
     document.getElementById("enter").style.display = "none"
     if (!started){
         var audio = new Audio('m.mp3');
-        audio.volume = 0.02;
         
         audio.play();
         started = true  
